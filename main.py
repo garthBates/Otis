@@ -61,3 +61,9 @@ if __name__ == '__main__':
 					query.pop(0) #remove say
 					speech = ' '.join(query)
 					speak(speech)
+
+			# Navigation
+			if query[0] == 'go' and query[1] == 'to':
+				speak('Opening...')
+				query = ' '.join(query[2:])
+				webbrowser.open_new(query)
