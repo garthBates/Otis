@@ -12,6 +12,11 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)	#0 == male, 1 == female
 activationWord = 'Otis'	#single word
 
+#Configure Browser
+#Set the path
+brave_path = r"/usr/bin/brave-browser-stable %U"
+webbrowser.register('brave', None, webbrowser.BackgroundBrowser(brave_path))
+
 def speak(text, rate = 120):
 	engine.setProperty('rate', rate)
 	engine.say(text)
